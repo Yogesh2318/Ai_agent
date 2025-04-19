@@ -17,7 +17,7 @@ function activate(context) {
     // Initialize the OpenAI client with API key from settings
     function initializeOpenAI() {
         const config = vscode.workspace.getConfiguration('shellCommandAssistant');
-        const apiKey ="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"
+        const apiKey ="Your API Key"
         
         if (!apiKey) {
             vscode.window.showErrorMessage('OpenAI API key is not set. Please set it in the extension settings or as an environment variable.');
