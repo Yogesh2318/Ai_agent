@@ -1,0 +1,63 @@
+{
+  "name": "shell-command-assistant",
+  "displayName": "Shell Command Assistant",
+  "description": "Convert natural language to shell commands using AI",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "shellCommandAssistant.runTask",
+        "title": "Shell Command Assistant: Run Task"
+      },
+      {
+        "command": "shellCommandAssistant.settings",
+        "title": "Shell Command Assistant: Configure Settings"
+      }
+    ],
+    "configuration": {
+      "title": "Shell Command Assistant",
+      "properties": {
+        "shellCommandAssistant.openaiApiKey": {
+          "type": "string",
+          "default": "",
+          "description": "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"
+        },
+        "shellCommandAssistant.defaultModel": {
+          "type": "string",
+          "default": "gpt-4o-mini",
+          "enum": [
+            "gpt-4o-mini",
+            "gpt-4o",
+            "gpt-3.5-turbo"
+          ],
+          "description": "Default OpenAI model to use"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "openai": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.2.0",
+    "@types/node": "^14.18.63",
+    "@types/vscode": "^1.99.1",
+    "eslint": "^8.57.1",
+    "glob": "^7.2.3",
+    "vscode-test": "^1.6.1"
+  }
+}
